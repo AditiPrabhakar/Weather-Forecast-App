@@ -8,7 +8,7 @@ async function fetchWeather() {
 
     try {
         const response = await fetch(
-            `http://api.weatherapi.com/v1/current.json?key=3df6a5be170e40289ec165011250701&q=${city}&aqi=yes`
+            `https://api.weatherapi.com/v1/current.json?key=3df6a5be170e40289ec165011250701&q=${city}&aqi=yes`
         );
 
         const data = await response.json();
@@ -27,7 +27,7 @@ function getWeatherByLocation() {
             const { latitude, longitude } = position.coords;
             try {
                 const response = await fetch(
-                    `http://api.weatherapi.com/v1/current.json?key=3df6a5be170e40289ec165011250701&q=${latitude},${longitude}&api=yes`);
+                    `https://api.weatherapi.com/v1/current.json?key=3df6a5be170e40289ec165011250701&q=${latitude},${longitude}&api=yes`);
                 const data = await response.json();
                 console.log('data', data);
                 updateWeatherUI(data);
